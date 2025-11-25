@@ -1,91 +1,129 @@
 import React from "react";
-import { CheckCircle, Rocket, Layers, Coins, Cpu, Shield, Zap, Globe, Wallet, Wrench, LineChart, Boxes } from "lucide-react";
+import FeatureCard from "../components/FeatureCard";
+import {
+  Rocket,
+  Layers,
+  Coins,
+  DollarSign,
+  Lock,
+  Star,
+  Wallet,
+  ShieldCheck,
+  Globe,
+  Wrench,
+  Zap,
+  Boxes,
+} from "lucide-react";
 
-export default function FeaturesPage() {
-  const features = [
-    {
-      title: "Multi-Token AMM DEX",
-      description: "Swap any ERC-20 asset with deep liquidity and MEV-resistant execution.",
-      icon: <Coins className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Launchpad",
-      description: "Token creators can deploy new tokens and run presales directly with no-code tools.",
-      icon: <Rocket className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Launchpool",
-      description: "Stake new project tokens or existing pairs to earn Atlas rewards.",
-      icon: <Layers className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "LP Farming & Rewards",
-      description: "Provide liquidity and earn Atlas rewards automatically through LP emissions.",
-      icon: <LineChart className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Atlas Staking Engine",
-      description: "Stake any supported ERC-20 token to earn Atlas—unified reward system.",
-      icon: <Cpu className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "NFT Integration",
-      description: "NFT-based access, premium tiers, governance boosts, and staking multipliers.",
-      icon: <Boxes className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Treasury Vault",
-      description: "Secure on-chain vault for protocol revenue, fees, and reward emissions.",
-      icon: <Shield className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Decentralized Governance",
-      description: "Atlas token holders vote on upgrades, emissions, fees, and community proposals.",
-      icon: <Globe className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Fiat On-Ramp & Off-Ramp",
-      description: "Buy and sell tokens directly with fiat—no KYC required, fast settlement.",
-      icon: <Wallet className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Zero-Code Builder",
-      description: "Create tokens, run presales, deploy pools, and configure launchpads without coding.",
-      icon: <Wrench className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Ultra-Fast Execution",
-      description: "Optimized swaps through our custom router for near-zero latency transactions.",
-      icon: <Zap className="w-10 h-10 text-blue-500" />,
-    },
-    {
-      title: "Modular Ecosystem",
-      description: "Easily integrate launchpad, DEX, staking, or NFTs through the developer SDK.",
-      icon: <CheckCircle className="w-10 h-10 text-blue-500" />,
-    },
-  ];
+const featuresData = [
+  {
+    title: "Multi-Token AMM DEX",
+    description:
+      "Swap any ERC-20 pair with deep liquidity and an optimized router for minimal slippage.",
+    icon: Rocket,
+    // no imageSrc -> shows gradient placeholder inside the card
+  },
+  {
+    title: "No-Code Launchpad",
+    description:
+      "Create token sales, vesting, and auto-liquidity with a guided wizard — no coding required.",
+    icon: Layers,
+  },
+  {
+    title: "Launchpool",
+    description:
+      "Flexible staking pools for projects: stake tokens or LPs, distribute rewards in ATLAS.",
+    icon: Coins,
+  },
+  {
+    title: "LP Farming & Rewards",
+    description:
+      "Automatically earn ATLAS for providing liquidity across any supported pools.",
+    icon: DollarSign,
+  },
+  {
+    title: "Flexible Staking Engine",
+    description:
+      "Stake ATLAS (or other supported tokens) — supports instant unstake and reward claiming.",
+    icon: Lock,
+  },
+  {
+    title: "NFT Launch & Staking",
+    description:
+      "Launch NFT collections, run whitelist sales and enable NFT staking for token rewards.",
+    icon: Star,
+  },
+  {
+    title: "Vault & Treasury Automation",
+    description:
+      "Protocol fees and bridge fees route to the on-chain vault admin for transparent governance.",
+    icon: Wallet,
+  },
+  {
+    title: "DAO Governance",
+    description:
+      "Token-based governance: vote on parameters, treasury spends, and feature roadmaps.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Fiat On-Ramp / Off-Ramp",
+    description:
+      "Buy ATLAS (or presale tokens) with fiat. Users can also withdraw to fiat via liquidity rails.",
+    icon: Globe,
+  },
+  {
+    title: "Zero-Code Token Builder",
+    description:
+      "Deploy ERC-20 tokens, presales and pools using the no-code interface (wizard + templates).",
+    icon: Wrench,
+  },
+  {
+    title: "Ultra-Fast Execution",
+    description:
+      "Optimized gas paths and routing minimize latency and exposure to common MEV vectors.",
+    icon: Zap,
+  },
+  {
+    title: "Modular & Extensible",
+    description:
+      "Add or remove modules (DEX, Launchpad, Pools, NFT) or integrate via SDK and APIs.",
+    icon: Boxes,
+  },
+];
 
+const FeaturesPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-16">
-        <h1 className="text-4xl font-bold">Atlas Protocol Features</h1>
-        <p className="mt-4 text-gray-300">
-          A next-generation modular DEX ecosystem designed for builders, traders, and users.
-        </p>
-      </div>
+    <main className="min-h-screen bg-gray-50 text-gray-900 py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500">
+            ATLAS Protocol — Features
+          </h1>
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+            A modular, production-ready ecosystem: DEX, Launchpad, Launchpool, staking, NFTs, fiat rails and governance —
+            everything connected by ATLAS.
+          </p>
+        </header>
 
-      <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {features.map((f, i) => (
-          <div
-            key={i}
-            className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all"
-          >
-            <div className="flex justify-center mb-6">{f.icon}</div>
-            <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-            <p className="text-gray-400 text-sm">{f.description}</p>
-          </div>
-        ))}
+        <section className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {featuresData.map((f, idx) => (
+            <div
+              key={idx}
+              className="animate-feature-entrance"
+              style={{ animationDelay: `${idx * 70}ms` }}
+            >
+              <FeatureCard
+                title={f.title}
+                description={f.description}
+                icon={f.icon}
+                // imageSrc omitted intentionally (no images)
+              />
+            </div>
+          ))}
+        </section>
       </div>
-    </div>
+    </main>
   );
-}
+};
+
+export default FeaturesPage;
