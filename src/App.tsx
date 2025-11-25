@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Whitepaper from "./pages/Whitepaper";
-import QandA from "./pages/QandA";
+import QA from "./pages/QA";
 import WhyAtlas from "./pages/WhyAtlas";
 import LaunchApp from "./pages/LaunchApp";
 import Presale from "./pages/Presale";
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <nav className="space-x-4">
           <Link to="/" className="hover:text-atlasPink">Home</Link>
           <Link to="/whitepaper" className="hover:text-atlasPink">Whitepaper</Link>
-          <Link to="/qanda" className="hover:text-atlasPink">Q & A</Link>
+          <Link to="/qa" className="hover:text-atlasPink">Q & A</Link>
           <Link to="/why-atlas" className="hover:text-atlasPink">Why Atlas</Link>
           <Link to="/launch" className="hover:text-atlasPink">Launch App</Link>
           <Link to="/presale" className="hover:text-atlasPink">Presale</Link>
@@ -28,7 +28,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/whitepaper" element={<Whitepaper />} />
-          <Route path="/qanda" element={<QandA />} />
+<Route path="/qa" element={<QA />} />
           <Route path="/why-atlas" element={<WhyAtlas />} />
           <Route path="/launch" element={<LaunchApp />} />
           <Route path="/presale" element={<Presale />} />
