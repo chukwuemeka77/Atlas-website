@@ -8,6 +8,19 @@ import LaunchApp from "./pages/LaunchApp";
 import Presale from "./pages/Presale";
 import FeaturesPage from "./pages/Features";
 
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => setLoading(false), 1200);
+  return () => clearTimeout(timer);
+}, []);
+
+return (
+  <>
+    {loading && <Preloader />}
+    {!loading && <MainRouter />}
+  </>
+);
 
 const App: React.FC = () => {
   return (
