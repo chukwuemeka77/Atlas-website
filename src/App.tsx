@@ -32,7 +32,6 @@ const App: React.FC = () => {
           <Route path="/why-atlas" element={<WhyAtlas />} />
           <Route path="/launch" element={<LaunchApp />} />
           <Route path="/presale" element={<Presale />} />
-          import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
         <Route path="/features" element={<FeaturesPage />} />
    
