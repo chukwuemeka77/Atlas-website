@@ -1,55 +1,92 @@
-// src/pages/Whitepaper.tsx
 import React from "react";
-import SharePdfButton from "../components/SharePdfButton";
+import { Download, FileText } from "lucide-react";
 
-const Whitepaper: React.FC = () => {
-  const pdfPath = "/atlas_features_whitepaper_styled.pdf";
+const Whitepaper = () => {
+  const downloadPDF = () => {
+    window.open("/whitepaper/atlas-whitepaper.pdf", "_blank");
+  };
 
   return (
-    <main className="min-h-screen py-16 bg-white text-gray-900">
-      <div className="max-w-4xl mx-auto px-6">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-extrabold mb-3">Atlas Protocol — Whitepaper</h1>
-          <p className="text-gray-600">
-            Read our full whitepaper to learn about tokenomics, architecture, and governance.
-          </p>
-        </header>
+    <div className="min-h-screen bg-gray-50 pt-24 pb-16 px-6">
+      <div className="max-w-4xl mx-auto">
 
-        <section className="bg-gray-50 p-6 rounded-lg shadow-sm mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Download the Whitepaper (PDF)</h2>
-          <p className="text-gray-700 mb-4">Get a printer-friendly PDF version of our features and technical overview.</p>
-          <div className="flex gap-3 items-center">
-            <a
-              href={pdfPath}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-md"
-            >
-              View / Download PDF
-            </a>
-            <SharePdfButton pdfPath={pdfPath} label="Share PDF" />
-          </div>
-        </section>
+        <h1 className="text-4xl font-bold text-center mb-6">
+          Atlas Protocol Whitepaper
+        </h1>
 
-        <section className="prose max-w-none">
-          <h2>Executive Summary</h2>
-          <p>
-            Atlas Protocol is a modular DEX and launch ecosystem combining a multi-token AMM, no-code launchpad,
-            launchpool staking, and treasury-driven tokenomics. This whitepaper summarizes the protocol architecture,
-            tokenomics, and roadmap.
-          </p>
+        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+          The next-generation decentralized liquidity engine powering 
+          launchpads, launchpools, multi-token DEX architecture, and 
+          fiat on/off-ramping. Explore the full vision below.
+        </p>
 
-          <h3>Tokenomics</h3>
-          <p>... (you can paste the tokenomics content here) ...</p>
+        {/* Download CTA */}
+        <div className="flex justify-center mb-10">
+          <button
+            onClick={downloadPDF}
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-lg"
+          >
+            <Download className="w-5 h-5" />
+            Download Whitepaper
+          </button>
+        </div>
 
-          <h3>Launchpad</h3>
-          <p>... (details about launchpad, vesting, mandatory liquidity lock, fees) ...</p>
+        {/* Document Sections */}
+        <div className="space-y-12">
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">1. Introduction</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Atlas Protocol is an all-in-one decentralized liquidity ecosystem
+              designed to merge multi-chain token issuance, automated liquidity,
+              zero-KYC fiat on/off ramping, and creator-driven market tools.
+            </p>
+          </section>
 
-          <h3>Security & Audits</h3>
-          <p>... (audit plans, timelocks, multisig) ...</p>
-        </section>
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">2. Core Architecture</h2>
+            <p className="text-gray-700">
+              • Multi-token AMM + Router  
+              • Launchpad + Launchpool smart-contract suite  
+              • Non-custodial fiat gateway integration  
+              • Modular liquidity providers and oracle feeds  
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">3. Token Utility (ATLAS)</h2>
+            <p className="text-gray-700">
+              • Revenue share  
+              • Governance mechanism  
+              • Liquidity mining  
+              • Cross-chain settlement asset  
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">4. Protocol Features</h2>
+            <ul className="list-disc pl-6 text-gray-700">
+              <li>Multi-DEX architecture</li>
+              <li>Creator launchpad engine</li>
+              <li>Liquidity automation</li>
+              <li>Zero-KYC fiat on/off ramp</li>
+              <li>Smart order routing</li>
+              <li>USD/USDC/Atlas pegged equivalent pools</li>
+            </ul>
+          </section>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <button
+            onClick={downloadPDF}
+            className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-xl shadow-lg"
+          >
+            <FileText className="w-5 h-5" />
+            Download PDF Version
+          </button>
+        </div>
       </div>
-    </main>
+    </div>
   );
 };
 
