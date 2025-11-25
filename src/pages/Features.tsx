@@ -122,6 +122,14 @@ const FeaturesPage: React.FC = () => {
           ))}
         </section>
       </div>
+      <button
+  onClick={() => window.open("/whitepaper/features-summary.pdf", "_blank")}
+  className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 shadow-lg mb-10 mx-auto"
+>
+  <Download className="w-5 h-5" />
+  Share Feature PDF
+</button>
+
     </main>
   );
 };
