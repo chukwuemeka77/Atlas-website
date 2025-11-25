@@ -1,19 +1,16 @@
-{
-  "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{ts,tsx}"
+  ],
+  theme: {
+    extend: {
+      colors: {
+        atlasBlue: "#1E40AF",
+        atlasPink: "#EC4899"
+      }
+    }
   },
-  "include": ["src"]
-}
+  plugins: []
+};
