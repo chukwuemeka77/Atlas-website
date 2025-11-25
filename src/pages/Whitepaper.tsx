@@ -1,5 +1,5 @@
 import React from "react";
-import { Download, FileText } from "lucide-react";
+import { Download } from "lucide-react";
 
 const Whitepaper = () => {
   const downloadPDF = () => {
@@ -10,17 +10,11 @@ const Whitepaper = () => {
     <div className="min-h-screen bg-gray-50 pt-24 pb-16 px-6">
       <div className="max-w-4xl mx-auto">
 
-        <h1 className="text-4xl font-bold text-center mb-6">
-          Atlas Protocol Whitepaper
-        </h1>
-
+        <h1 className="text-4xl font-bold text-center mb-6">Atlas DEX Whitepaper</h1>
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
-          The next-generation decentralized liquidity engine powering 
-          launchpads, launchpools, multi-token DEX architecture, and 
-          fiat on/off-ramping. Explore the full vision below.
+          Atlas DEX is a next-generation decentralized exchange offering liquidity provision, cross-chain swaps, and rewards. Users earn $Atlas tokens through the XP system.
         </p>
 
-        {/* Download CTA */}
         <div className="flex justify-center mb-10">
           <button
             onClick={downloadPDF}
@@ -31,60 +25,54 @@ const Whitepaper = () => {
           </button>
         </div>
 
-        {/* Document Sections */}
-        <div className="space-y-12">
+        <div className="space-y-12 text-gray-700 leading-relaxed">
           <section>
             <h2 className="text-2xl font-semibold mb-3">1. Introduction</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Atlas Protocol is an all-in-one decentralized liquidity ecosystem
-              designed to merge multi-chain token issuance, automated liquidity,
-              zero-KYC fiat on/off ramping, and creator-driven market tools.
-            </p>
+            <p>Atlas DEX is designed to offer a decentralized exchange with a focus on liquidity, cross-chain interoperability, and a reward-driven ecosystem.</p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">2. Core Architecture</h2>
-            <p className="text-gray-700">
-              • Multi-token AMM + Router  
-              • Launchpad + Launchpool smart-contract suite  
-              • Non-custodial fiat gateway integration  
-              • Modular liquidity providers and oracle feeds  
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-3">3. Token Utility (ATLAS)</h2>
-            <p className="text-gray-700">
-              • Revenue share  
-              • Governance mechanism  
-              • Liquidity mining  
-              • Cross-chain settlement asset  
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold mb-3">4. Protocol Features</h2>
-            <ul className="list-disc pl-6 text-gray-700">
-              <li>Multi-DEX architecture</li>
-              <li>Creator launchpad engine</li>
-              <li>Liquidity automation</li>
-              <li>Zero-KYC fiat on/off ramp</li>
-              <li>Smart order routing</li>
-              <li>USD/USDC/Atlas pegged equivalent pools</li>
+            <h2 className="text-2xl font-semibold mb-3">2. Core Features</h2>
+            <ul className="list-disc pl-6">
+              <li><strong>$Atlas Token:</strong> ERC-20 initially, migrates to ATLASCHAIN native token at 1:1 conversion.</li>
+              <li><strong>Liquidity Pools:</strong> Users provide liquidity and earn $Atlas rewards.</li>
+              <li><strong>XP System:</strong> Rewards users for platform engagement, convertible to $Atlas tokens.</li>
+              <li><strong>Cross-Chain Swaps:</strong> Trade assets across supported chains seamlessly.</li>
+              <li><strong>Swap Fees:</strong> Initially 0.3% per transaction, used for development and liquidity rewards.</li>
             </ul>
           </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">3. Tokenomics</h2>
+            <ul className="list-disc pl-6">
+              <li>40% Community (Testnet & Airdrop)</li>
+              <li>20% Team</li>
+              <li>20% Marketing</li>
+              <li>20% Liquidity & Staking</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">4. Roadmap</h2>
+            <ul className="list-disc pl-6">
+              <li>Dec 2025: Atlas DEX Launch on Base Network.</li>
+              <li>2026: XP system and higher liquidity tiers.</li>
+              <li>2027: Migration to ATLASCHAIN native token.</li>
+              <li>2028+: Cross-chain expansion and governance.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">5. Security & Audits</h2>
+            <p>Atlas DEX smart contracts undergo thorough audits. The platform is fully decentralized and governance-driven.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-semibold mb-3">6. Conclusion</h2>
+            <p>Atlas DEX redefines decentralized exchanges with XP rewards, cross-chain interoperability, and the native $Atlas token, preparing for a scalable migration to ATLASCHAIN.</p>
+          </section>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button
-            onClick={downloadPDF}
-            className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-xl shadow-lg"
-          >
-            <FileText className="w-5 h-5" />
-            Download PDF Version
-          </button>
-        </div>
       </div>
     </div>
   );
