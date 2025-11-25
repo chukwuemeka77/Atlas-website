@@ -1,17 +1,19 @@
-import { defineConfig } from "tailwindcss";
-
-export default defineConfig({
-  content: ["./index.html", "./src/**/*.{ts,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        atlasBlue: "#1B2A49",
-        atlasPink: "#FF007A"
-      },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"]
-      }
-    },
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  plugins: [],
-});
+  "include": ["src"]
+}
