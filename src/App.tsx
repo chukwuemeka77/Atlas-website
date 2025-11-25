@@ -6,6 +6,8 @@ import QandA from "./pages/QandA";
 import WhyAtlas from "./pages/WhyAtlas";
 import LaunchApp from "./pages/LaunchApp";
 import Presale from "./pages/Presale";
+import FeaturesPage from "./pages/Features";
+
 
 const App: React.FC = () => {
   return (
@@ -30,6 +32,12 @@ const App: React.FC = () => {
           <Route path="/why-atlas" element={<WhyAtlas />} />
           <Route path="/launch" element={<LaunchApp />} />
           <Route path="/presale" element={<Presale />} />
+          import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+        <Route path="/features" element={<FeaturesPage />} />
+   
+
+
         </Routes>
       </main>
 
